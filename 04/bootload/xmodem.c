@@ -74,7 +74,7 @@ long xmodem_recv(char *buf)
       receiving++;
       r = xmodem_read_block(block_number, buf);
       if(r < 0){
-        serial_send_byte(SERIAL_DEFAULT_DEVICE, XMODEM_NAK)
+        serial_send_byte(SERIAL_DEFAULT_DEVICE, XMODEM_NAK);
       }else{
         block_number++;
         size  += r;
