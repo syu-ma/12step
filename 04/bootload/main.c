@@ -8,6 +8,13 @@ int global_bss;
 static int static_data = 0x20;
 static int static_bss;
 
+int func(int a, int b)
+{
+  volatile int c;
+  c = a + b;
+  return  c;
+}
+
 static void printval(void)
 {
   puts("global_data = "); putxval(global_data,0); puts("\n");
@@ -68,6 +75,7 @@ int main(void){
   extern int buffer_start;
 
   init();
+  func(1,2);
   puts("kzload (kozos boot loader) started.\n");
 
   while(1){

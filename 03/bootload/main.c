@@ -34,6 +34,7 @@ static int init(void)
   int main(void){
 	init();
   puts("Hello World!\n");
+  puts("Ahahahahaha!!\n");
 
   printval();
   puts("overwrite variables \n");
